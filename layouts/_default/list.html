@@ -7,6 +7,7 @@
   <div class="posts">
     {{ range .Paginator.Pages }}
       <article class="post on-list">
+        {{ partial "cover.html" . }}
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         </h1>
@@ -30,8 +31,6 @@
             {{ end }}
           </span>
         {{ end }}
-
-        {{ partial "cover.html" . }}
 
         <div class="post-content">
           {{ if .Params.showFullContent }}
