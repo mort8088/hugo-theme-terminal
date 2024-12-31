@@ -33,7 +33,12 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
-      <content>{{ .Content | html }}</content>
+      <content>
+        {{ .Content | html }}
+        <hr>
+        <p>Thanks for reading this post via RSS! 
+        Let me know your thoughts by leaving a comment on the original post or <a href="mailto:hello@mort8088.com">✉️ Email me</a>.</p>
+      </content>
     </item>
     {{ end }}
   </channel>
